@@ -1,4 +1,7 @@
 AWSTemplateFormatVersion: "2010-09-09"
+Parameters:
+  Region:
+    Type: String
 Resources:
   Cluster:
     Type: AWS::ECS::Cluster
