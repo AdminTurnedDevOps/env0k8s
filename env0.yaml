@@ -10,7 +10,7 @@ deploy:
         - ./linux-amd64/helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
         - ./linux-amd64/helm repo update
         - aws eks --region=$AWS_DEFAULT_REGION update-kubeconfig --name $CLUSTER_NAME
-        - ./linux-amd64/helm template prometheus-community/prometheus-community -n default > promgraf.yaml
+        - ./linux-amd64/helm template prometheus-community -n default > promgraf.yaml
 
 destroy:
   steps:
