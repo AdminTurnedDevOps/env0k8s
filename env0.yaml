@@ -13,8 +13,9 @@ deploy:
         - ./linux-amd64/helm repo update
         # - kubectl create sa release-name-grafana-test -n monitoring
         # - ./linux-amd64/helm template prometheus-community/prometheus -n monitoring > prom.yaml
+        - ./linux-amd64/helm template prometheus-community/kube-prometheus-stack -n monitoring > prom.yaml
         # - ./linux-amd64/helm template grafana/grafana -n monitoring > graf.yaml
-        - ./linux-amd64/helm install prometheus prometheus-community/kube-prometheus-stack --namespace monitoring --create-namespace
+        # - ./linux-amd64/helm install prometheus prometheus-community/kube-prometheus-stack --namespace monitoring --create-namespace
 
 destroy:
   steps:
