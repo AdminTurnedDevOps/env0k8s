@@ -9,7 +9,7 @@ deploy:
         - if [[ ! -e helm-v3.10.2-linux-amd64.tar.gz ]]; then wget https://get.helm.sh/helm-v3.10.2-linux-amd64.tar.gz; fi
         - tar -zxvf helm-v3.10.2-linux-amd64.tar.gz
         - ./linux-amd64/helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-        - ./linux-amd64/helm install prometheus prometheus-community/kube-prometheus-stack --namespace monitoring --create-namespace --set alertmanager.persistentVolume.storageClass="gp2",server.persistentVolume.storageClass="gp2"
+        - ./linux-amd64/helm install prometheus prometheus-community/kube-prometheus-stack --namespace monitoring --create-namespace
 
 destroy:
   steps:
