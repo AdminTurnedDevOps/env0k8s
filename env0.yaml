@@ -11,7 +11,7 @@ deploy:
         - ./linux-amd64/helm repo update
         - aws eks --region=$AWS_DEFAULT_REGION update-kubeconfig --name $CLUSTER_NAME
         # - ./linux-amd64/helm template prometheus-community/kube-prometheus-stack -n default > promgraf.yaml
-        - helm install prometheus prometheus-community/kube-prometheus-stack --namespace monitoring --create-namespace
+        - ./linux-amd64/helm install prometheus prometheus-community/kube-prometheus-stack --namespace monitoring --create-namespace
 
 destroy:
   steps:
