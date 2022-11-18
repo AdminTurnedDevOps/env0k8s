@@ -4,7 +4,7 @@ deploy:
   steps:
     setupVariables:
       after: &login-k8s
-        - aws eks --region=$AWS_DEFAULT_REGION update-kubeconfig --name 
+        - aws eks --region=$AWS_DEFAULT_REGION update-kubeconfig --name $CLUSTER_NAME
         - curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
         - chmod 700 get_helm.sh
         - ./get_helm.sh
