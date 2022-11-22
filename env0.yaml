@@ -10,8 +10,8 @@ deploy:
         - ./linux-amd64/helm repo add grafana https://grafana.github.io/helm-charts
         - ./linux-amd64/helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
         - ./linux-amd64/helm repo update
-        - kubectl create sa release-name-grafana-test -n monitoring
         - kubectl create namespace monitoring
+        - kubectl create sa release-name-grafana-test -n monitoring
         - ./linux-amd64/helm template prometheus-community/prometheus -n monitoring > prom.yaml
         - ./linux-amd64/helm template grafana/grafana -n monitoring > graf.yaml
 
