@@ -8,6 +8,7 @@ terraform {
 
 provider "azurerm" {
   features {}
+  subscription_id = var.subID
 }
 
 resource "azurerm_kubernetes_cluster" "k8squickstart" {
